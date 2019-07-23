@@ -101,6 +101,25 @@ body .home-banner {
     transform: translateY(-20px);
   }
 }
+.intro-text-pos {
+  position: absolute;
+  left: 510px;
+  top: 200px;
+  color: white;
+}
+
+.intro-text-pos pre {
+  color: #f8f8f8;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+
+.intro-text-pos h3 {
+  font-size: 26px;
+  letter-spacing: 0.5em;
+  font-weight: bold;
+}
+
 .man-pos {
   left: 328px;
   top: 80px;
@@ -168,6 +187,7 @@ body section .placements .popicon, .highers .popicon {
 body section .placements:hover .popicon, .highers:hover .popicon {
   transform: translateY(-10px);
   background-image: linear-gradient(225deg, #ffa85b 0, #ff4182 100%);
+  cursor: pointer;
 }
 
 body section h4 {
