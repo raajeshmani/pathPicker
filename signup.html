@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <header class="banner-container">
+    <div class="navbar">
+      <div class="navhead">
+        <img src="assets/favicon.svg" alt="">
+        <a href="">Path Picker</a>
+      </div>
+      <div class="navbody">
+        <nav>
+          <a href="login.html">Get me back in</a>
+          <div>
+            <a id="signupbtn" href="signup.html">I am new</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="home-banner">
+      <div class="floating-obj man-pos">
+        <img src="assets/boy.png" alt="">
+      </div>
+      <div class="login-sheet">
+        <form action="" class="login-form">
+          <h1>SIGN UP</h1>
+
+          <div class="txtb">
+            <input type="text">
+            <span data-placeholder="Username"></span>
+          </div>
+
+          <div class="txtb">
+            <input type="text">
+            <span data-placeholder="Password"></span>
+          </div>
+
+          <div class="txtb">
+            <input type="text">
+            <span data-placeholder="Email"></span>
+          </div>
+          <div class="button-bar">
+            <input type="submit" class="logbtn">
+            <a class="log-red" href="login.html">Log in</a>
+          </div>
+        </form>
+        <script type="text/javascript">
+          $(".txtb input").on("focus", function () {
+            $(this).addClass("focus");
+          });
+
+          $(".txtb input").on("blur", function () {
+            if ($(this).val() == "")
+              $(this).removeClass("focus");
+          });
+        </script>
+      </div>
+      <div class="floating-obj girl-pos">
+        <img src="assets/girl.png" alt="">
+      </div>
+    </div>
+    <div class="home-banner-bottom-curve"></div>
+  </header>
+</body>
+
+</html>
