@@ -8,6 +8,8 @@
             
             <app-course-detail [id]=item.id [called]="called" *ngIf='dtype=="course"'></app-course-detail>
             <app-college-detail [id]=item.id [called]="called" *ngIf='dtype=="college"'></app-college-detail>
+            <app-exam-detail [id]=item.id [called]="called" *ngIf='dtype=="exam"'></app-exam-detail>
+            <app-center-detail [id]=item.id [called]="called" *ngIf='dtype=="center"'></app-center-detail>
         </nb-list-item>
     </nb-list>
 </nb-card>

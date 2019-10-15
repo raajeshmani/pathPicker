@@ -28,6 +28,7 @@ export class AppComponent {
         this.params=this.params.set('expenses__range', this.expense_min+','+this.expense_max);
       }
     }
+    
     if(dtype=='course'){
       if(this.course_name){
         this.params = new  HttpParams().set('name__contains', this.course_name);
