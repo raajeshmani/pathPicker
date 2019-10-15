@@ -4,7 +4,7 @@ from .models import (Exam,CoachingCenter)
 class ExamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exam
-        fields=['id','name','date','coaching_centers','colleges']
+        fields=['id','name','date','coaching_centers','colleges','links']
         depth=1
 
 class CoachingCenterSerializer(serializers.ModelSerializer):

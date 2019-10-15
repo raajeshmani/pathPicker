@@ -14,3 +14,9 @@ class College(models.Model):
     expenses=models.IntegerField()
     entrance_exam=models.ForeignKey(Exam,related_name='colleges',on_delete='models.CASCADE')
     courses=models.ManyToManyField(Course,related_name='offering_colleges')
+
+
+class Links(models.Model):
+    link=models.TextField(default=None)
+    related_exams=models.ManyToManyField(Exam,related_name='links')
+    related_colleges=models.ManyToManyField(College,related_name='links')
