@@ -1,0 +1,32 @@
+<nb-card>
+    <nb-card-body>
+        <nb-accordion>
+            <nb-accordion-item *ngIf="center">
+                <nb-accordion-item-header>
+                    {{center['name']}}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+
+                    <nb-tabset>
+                        <nb-tab tabTitle="Description" badgeStatus="danger">
+                            <p><strong>Contact No: </strong>{{center['contact_no']}}</p>
+                            <p><strong>Location: </strong>{{center['location']}}</p>
+
+                        </nb-tab>
+
+                        <nb-tab *ngIf="called!='exam'" tabTitle="Entrance Exams"
+                            badgeText="{{college['entrance_exam'].length}}" badgePosition="bottom right"
+                            badgeStatus="success">
+                        <app-nested-details called="college" dtype="exam" [id_arr]="college['entrance_exam']" ></app-nested-details>
+
+                            
+                        </nb-tab>
+
+                    </nb-tabset>
+
+
+                </nb-accordion-item-body>
+            </nb-accordion-item>
+        </nb-accordion>
+    </nb-card-body>
+</nb-card>

@@ -4,10 +4,11 @@ import { NbListModule,NbCardModule } from '@nebular/theme';
 
 import { DetailModule } from '../detail/detail.module';
 import { ListDetailsComponent } from './list-details/list-details.component';
+import { ResultDetailsComponent } from './result-details/result-details.component';
 
 
 @NgModule({
-  declarations: [ListDetailsComponent,],
+  declarations: [ListDetailsComponent, ResultDetailsComponent,],
   imports: [
     CommonModule,
     DetailModule,

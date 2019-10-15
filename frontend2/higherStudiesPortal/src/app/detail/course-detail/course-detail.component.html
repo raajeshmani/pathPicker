@@ -14,12 +14,13 @@
                             </nb-tab>
 
                             <nb-tab 
-                                    *ngIf="!nested"
+                                    *ngIf="called!='college'"
                                     tabTitle="Colleges"
                                     badgeText="{{course['offering_colleges'].length}}"
                                     badgePosition="bottom right"
                                     badgeStatus="danger">
-                              List of Colleges
+                                    <!-- LOL -->
+                                <app-nested-details called="course" dtype="college" [id_arr]="course['offering_colleges']" ></app-nested-details>
                             </nb-tab>
                           </nb-tabset>
 

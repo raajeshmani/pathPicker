@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SyncService } from '../sync.service';
 import { Observable } from 'rxjs';
-
-const GET_COURSE_URL = 'api/course/';
+import {constants} from '../constants';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +10,8 @@ export class DetailService {
 
   constructor(private syncService: SyncService) { }
 
-  getCourses(): Observable<Object> {
-    return this.syncService.get(GET_COURSE_URL, null);
-  }
-
-  getCourse(id): Observable<Object> {
-    return this.syncService.get(GET_COURSE_URL+id+'/', null);
+  
+  getItem(class_name,id): Observable<Object> {
+    return this.syncService.get(constants.GET_API_URL+class_name+'/'+id+'/', null);
   }
 }

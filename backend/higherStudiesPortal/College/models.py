@@ -12,7 +12,7 @@ class College(models.Model):
     name=models.CharField(max_length=200)
     description=models.TextField()
     expenses=models.IntegerField()
-    entrance_exam=models.ForeignKey(Exam,related_name='colleges',on_delete='models.CASCADE')
+    entrance_exam=models.ManyToManyField(Exam,related_name='colleges')
     courses=models.ManyToManyField(Course,related_name='offering_colleges')
 
 

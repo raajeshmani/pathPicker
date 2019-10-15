@@ -9,11 +9,11 @@ import { DetailService } from '../detail.service';
 export class CourseDetailComponent implements OnInit {
   @Input() id: number;
   // nested if the component is called in a nested manner. Used to prevent infinite card loops
-  @Input() nested:boolean;
+  @Input() called:String;
   constructor(private detailService:DetailService) { }
   course;
   getCourseDetail(){
-    this.detailService.getCourse(this.id).subscribe
+    this.detailService.getItem('course',this.id).subscribe
     (
       data=>{
         this.course=data;
@@ -21,6 +21,7 @@ export class CourseDetailComponent implements OnInit {
     );
   }
   ngOnInit() {
+    // console.log(this.called);
     this.getCourseDetail();
   }
 

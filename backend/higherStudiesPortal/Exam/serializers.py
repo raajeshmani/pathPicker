@@ -1,14 +1,17 @@
 from rest_framework import serializers
 from .models import (Exam,CoachingCenter)
+from College.serializers import LinksSerializer
 
 class ExamSerializer(serializers.ModelSerializer):
+    links=LinksSerializer(read_only=True, many=True)
     class Meta:
         model = Exam
         fields=['id','name','date','coaching_centers','colleges','links']
-        depth=1
+        # depth=1
 
 class CoachingCenterSerializer(serializers.ModelSerializer):
     class Meta:
         model = CoachingCenter
         fields=['id','name','location','contact_no','entrance_exams']
-        depth=1
+        # depth=1
+

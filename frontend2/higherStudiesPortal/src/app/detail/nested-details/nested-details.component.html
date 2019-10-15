@@ -1,0 +1,23 @@
+<nb-card size="large" status="success">
+    <!-- <nb-list>
+        <nb-list-item *ngFor="let item of items">
+
+            <app-course-detail [id]=item [called]="called" *ngIf='dtype=="course"'></app-course-detail>
+            <app-college-detail [id]=item [called]="called" *ngIf='dtype=="college"'></app-college-detail>
+            <app-exam-detail [id]=item [called]="called" *ngIf='dtype=="exam"'></app-exam-detail>
+            <app-center-detail [id]=item [called]="called" *ngIf='dtype=="center"'></app-center-detail>
+        </nb-list-item>
+    </nb-list> -->
+    <nb-card-body>    <nb-stepper>
+        <nb-step label="{{dtype}}" *ngFor="let item of items">
+            <app-course-detail [id]=item [called]="called" *ngIf='dtype=="course"'></app-course-detail>
+            <app-college-detail [id]=item [called]="called" *ngIf='dtype=="college"'></app-college-detail>
+            <app-exam-detail [id]=item [called]="called" *ngIf='dtype=="exam"'></app-exam-detail>
+            <app-center-detail [id]=item [called]="called" *ngIf='dtype=="center"'></app-center-detail>
+            <button nbButton nbStepperPrevious>prev</button>
+            &nbsp;
+            <button nbButton nbStepperNext>next</button>
+        </nb-step>
+    </nb-stepper>
+</nb-card-body>
+</nb-card>

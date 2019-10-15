@@ -1,0 +1,46 @@
+<nb-card>
+    <nb-card-body>
+        <nb-accordion>
+            <nb-accordion-item *ngIf="exam">
+                <nb-accordion-item-header>
+                    {{exam['name']}}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+
+                    <nb-tabset>
+                        <nb-tab tabTitle="Description" badgeStatus="danger">
+                            {{exam['description']}}
+                            Exam happens on {{exam['date']}}
+                        </nb-tab>
+
+                        <nb-tab *ngIf="called!='college'" tabTitle="Colleges"
+                            badgeText="{{exam['colleges'].length}}" badgePosition="bottom right"
+                            badgeStatus="danger">
+                            <app-nested-details called="exam" dtype="college" [id_arr]="exam['colleges']">
+                            </app-nested-details>
+                        </nb-tab>
+
+
+                        <nb-tab *ngIf="called!='center'" tabTitle="Coaching Centers"
+                        badgeText="{{exam['coaching_centers'].length}}" badgePosition="bottom right"
+                        badgeStatus="danger">
+                        <app-nested-details called="exam" dtype="center" [id_arr]="exam['coaching_centers']">
+                        </app-nested-details>
+                    </nb-tab>
+
+                    <nb-tab tabTitle="Links" badgeText="{{exam['links'].length}}"
+                    badgePosition="top right" badgeStatus="success">
+                    <div *ngFor="let link_dict of exam['links']">
+                        <a href="{{link_dict['link']}}">{{link_dict['link']}}</a>
+                    </div>
+                    
+                </nb-tab>
+
+                    </nb-tabset>
+
+
+                </nb-accordion-item-body>
+            </nb-accordion-item>
+        </nb-accordion>
+    </nb-card-body>
+</nb-card>
