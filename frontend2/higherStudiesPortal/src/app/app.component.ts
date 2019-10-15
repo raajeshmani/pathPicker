@@ -1,4 +1,4 @@
-import { Component,ChangeDetectorRef } from '@angular/core';
+import { Component,ChangeDetectorRef,ApplicationRef } from '@angular/core';
 import {HttpParams} from  "@angular/common/http";
 
 @Component({
@@ -7,26 +7,35 @@ import {HttpParams} from  "@angular/common/http";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private cdr:ChangeDetectorRef){
+  constructor(private cdr:ChangeDetectorRef,private appRef: ApplicationRef){
   }
   college_name;
   expense_min=0;
   expense_max;
   curr_dtype='course';
+  course_name;
+  course_type;
   params=null;
   title = 'higherStudiesPortal';
   
   search(dtype){
-    this.curr_dtype=dtype;
     if(dtype=='college'){
       if(this.college_name){
-      this.params = new  HttpParams().set('name__contains', this.college_name)
+      this.params = new  HttpParams().set('name__contains', this.college_name);
+      console.log('new');
       }
       if(this.expense_max){
         this.params=this.params.set('expenses__range', this.expense_min+','+this.expense_max);
       }
-      console.log(this.params);
     }
-    // this.cdr.detectChanges();
+    if(dtype=='course'){
+      if(this.course_name){
+        this.params = new  HttpParams().set('name__contains', this.course_name);
+      }
+      if(this.course_type){
+        this.params=this.params.set('c_type__contains', this.course_type);
+      }
+    }
+    this.curr_dtype=dtype;
   }
 }

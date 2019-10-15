@@ -21,24 +21,36 @@
     <div class="row show-grid">
       <div class="col-md-3">
         <nb-card status="primary">
-            <nb-card-header>Search</nb-card-header>
-            <nb-card-body>
-                <input type="text" [(ngModel)]="college_name" nbInput fullWidth status="success" placeholder="College Name">
-                <br>
-                <input type="text" [(ngModel)]="expense_min" nbInput fullWidth status="success" placeholder="Min. Expenses">
-                <br>
-                <input type="text" [(ngModel)]="expense_max" nbInput fullWidth status="success" placeholder="Max. Expenses">
-                <br>
-                <button (click)="search('college')" nbButton hero status="success">Search College</button>
+          <nb-card-header>Search</nb-card-header>
+          <nb-card-body>
+            <div>
+              <input type="text" [(ngModel)]="college_name" nbInput fullWidth status="success"
+                placeholder="College Name">
+              <br>
+              <input type="text" [(ngModel)]="expense_min" nbInput fullWidth status="success"
+                placeholder="Min. Expenses">
+              <br>
+              <input type="text" [(ngModel)]="expense_max" nbInput fullWidth status="success"
+                placeholder="Max. Expenses">
+              <br>
+              <button (click)="search('college')" nbButton hero status="success">Search College</button>
+            </div>
+            <button (click)="search('reset')" nbButton hero status="danger">Reset</button>
+            <div>
+                <input type="text" [(ngModel)]="course_name" nbInput fullWidth status="info"
+                placeholder="Course Name">
+                <input type="text" [(ngModel)]="course_type" nbInput fullWidth status="info"
+                placeholder="Course Type">
+              <button (click)="search('course')" nbButton hero status="info">Course</button>
+            </div>
 
+          </nb-card-body>
 
-            </nb-card-body>
-                    
         </nb-card>
       </div>
       <div class="col-md-9">
-        <app-list-details *ngIf="(curr_dtype=='college')&&(params==null)" dtype="college" [params]="params" ></app-list-details>
-        <app-list-details *ngIf="(curr_dtype=='course')&&(params==null)" dtype="course" [params]="params" ></app-list-details>
+        <app-list-details *ngIf="(curr_dtype=='college')" dtype="college" [params]="params"></app-list-details>
+        <app-list-details *ngIf="(curr_dtype=='course')" dtype="course" [params]="params"></app-list-details>
       </div>
     </div>
 
