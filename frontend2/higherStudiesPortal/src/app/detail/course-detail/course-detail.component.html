@@ -1,0 +1,31 @@
+<nb-card>
+    <nb-card-body>
+        <nb-accordion>
+            <nb-accordion-item *ngIf="course">
+                <nb-accordion-item-header>
+                    {{course['name']}}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+
+                    <nb-tabset>
+                            <nb-tab tabTitle="Description"
+                                    badgeStatus="danger">
+                              {{course['description']}}
+                            </nb-tab>
+
+                            <nb-tab 
+                                    *ngIf="!nested"
+                                    tabTitle="Colleges"
+                                    badgeText="{{course['offering_colleges'].length}}"
+                                    badgePosition="bottom right"
+                                    badgeStatus="danger">
+                              List of Colleges
+                            </nb-tab>
+                          </nb-tabset>
+
+
+                </nb-accordion-item-body>
+            </nb-accordion-item>
+        </nb-accordion>
+    </nb-card-body>
+</nb-card>
